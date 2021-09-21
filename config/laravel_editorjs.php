@@ -16,6 +16,21 @@ return [
                 ],
                 'level' => [1, 2, 3, 4, 5, 6],
             ],
+            'list' => [
+                'style' => [
+                    0 => 'ordered',
+                    1 => 'unordered',
+                ],
+                'items' => [
+                    'type' => 'array',
+                    'data' => [
+                        '-' => [
+                            'type' => 'string',
+                            'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];
