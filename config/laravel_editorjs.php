@@ -123,6 +123,12 @@ return [
                 ],
             ],
             'delimiter' => [],
+            'raw' => [
+                'html' => [
+                    'type' => 'string',
+                    'allowedTags' => '*',
+                ],
+            ],
         ],
     ],
 ];
