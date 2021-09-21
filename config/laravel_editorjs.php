@@ -122,6 +122,7 @@ return [
                     'allowedTags' => '*',
                 ],
             ],
+            'delimiter' => [],
         ],
     ],
 ];
