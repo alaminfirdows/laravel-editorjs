@@ -2,10 +2,7 @@
 
 namespace AlAminFirdows\LaravelEditorjsHtml;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use ThriveDesk\Billing\Providers\EventServiceProvider;
-use ThriveDesk\Billing\Console\Commands\CancelTrialGraceSunscriptions;
 
 class LaravelEditorJsServiceProvider extends ServiceProvider
 {
@@ -16,7 +13,7 @@ class LaravelEditorJsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../config/laravel_editorjs.php', 'laravel_editorjs');
     }
 
     /**
