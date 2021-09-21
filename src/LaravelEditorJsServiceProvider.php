@@ -1,6 +1,6 @@
 <?php
 
-namespace AlAminFirdows\LaravelEditorjsHtml;
+namespace AlAminFirdows\LaravelEditorJs;
 
 use Illuminate\Support\ServiceProvider;
 

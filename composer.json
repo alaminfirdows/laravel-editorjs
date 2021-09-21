@@ -20,12 +20,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"AlAminFirdows\\LaravelEditorjsHtml\\": "src/"
+			"AlAminFirdows\\LaravelEditorJs\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"AlAminFirdows\\LaravelEditorjsHtml\\Tests\\": "tests/"
+			"AlAminFirdows\\LaravelEditorJs\\Tests\\": "tests/"
 		}
 	},
 	"extra": {
