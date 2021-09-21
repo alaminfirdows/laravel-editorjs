@@ -31,6 +31,37 @@ return [
                     ],
                 ],
             ],
+            'linkTool' => [
+                'link' => 'string',
+                'meta' => [
+                    'type' => 'array',
+                    'data' => [
+                        'title' => [
+                            'type' => 'string',
+                        ],
+                        'description' => [
+                            'type' => 'string',
+                        ],
+                        'url' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'domain' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'image' => [
+                            'type' => 'array',
+                            'required' => false,
+                            'data' => [
+                                'url' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];
