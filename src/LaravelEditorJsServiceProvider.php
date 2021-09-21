@@ -14,6 +14,10 @@ class LaravelEditorJsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/laravel_editorjs.php', 'laravel_editorjs');
+
+        $this->app->bind('LaravelEditorJs', static function ($app) {
+            return new LaravelEditorJs();
+        });
     }
 
     /**
