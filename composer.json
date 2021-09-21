@@ -1,6 +1,8 @@
 {
 	"name": "alaminfirdows/laravel-editorjs",
-	"type": "",
+	"description": "A simple editor.js html parser for Laravel",
+	"type": "library",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Al-Amin Firdows",
@@ -12,10 +14,25 @@
 		"codex-team/editor.js": "dev-master",
 		"illuminate/support": "^6|^7|^8"
 	},
-	"minimum-stability": "stable",
+	"require-dev": {
+		"orchestra/testbench": "^6.0",
+		"phpunit/phpunit": "^9.5"
+	},
 	"autoload": {
 		"psr-4": {
 			"AlAminFirdows\\LaravelEditorjsHtml\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"AlAminFirdows\\LaravelEditorjsHtml\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"AlAminFirdows\\LaravelEditorJs\\LaravelEditorJsServiceProvider"
+			]
 		}
 	}
 }
