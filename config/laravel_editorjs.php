@@ -62,6 +62,29 @@ return [
                     ],
                 ],
             ],
+            'image' => [
+                'file' => [
+                    'type' => 'array',
+                    'data' => [
+                        'width' => [
+                            'type' => 'integer',
+                            'required' => false,
+                        ],
+                        'height' => [
+                            'type' => 'integer',
+                            'required' => false,
+                        ],
+                        'url' => 'string',
+                    ],
+                ],
+                'caption' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                ],
+                'withBorder' => 'boolean',
+                'withBackground' => 'boolean',
+                'stretched' => 'boolean',
+            ],
         ],
     ],
 ];
