@@ -1,0 +1,21 @@
+{
+	"name": "alaminfirdows/laravel-editorjs",
+	"type": "",
+	"authors": [
+		{
+			"name": "Al-Amin Firdows",
+			"email": "alaminfirdows@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4",
+		"codex-team/editor.js": "dev-master",
+		"illuminate/support": "^6|^7|^8"
+	},
+	"minimum-stability": "stable",
+	"autoload": {
+		"psr-4": {
+			"AlAminFirdows\\LaravelEditorjsHtml\\": "src/"
+		}
+	}
+}
