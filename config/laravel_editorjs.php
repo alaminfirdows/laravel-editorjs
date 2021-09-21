@@ -116,6 +116,12 @@ return [
                     1 => 'center',
                 ],
             ],
+            'code' => [
+                'code' => [
+                    'type' => 'string',
+                    'allowedTags' => '*',
+                ],
+            ],
         ],
     ],
 ];
