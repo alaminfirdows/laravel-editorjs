@@ -8,6 +8,6 @@ class LaravelEditorJs extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'LaravelEditorJs';
+        return 'laravel-editorjs';
     }
 }
