@@ -85,6 +85,23 @@ return [
                 'withBackground' => 'boolean',
                 'stretched' => 'boolean',
             ],
+            'table' => [
+                'withHeadings' => 'boolean',
+                'content' => [
+                    'type' => 'array',
+                    'data' => [
+                        '-' => [
+                            'type' => 'array',
+                            'data' => [
+                                '-' => [
+                                    'type' => 'string',
+                                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];
