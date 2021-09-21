@@ -102,6 +102,20 @@ return [
                     ],
                 ],
             ],
+            'quote' => [
+                'text' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                ],
+                'caption' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                ],
+                'alignment' => [
+                    0 => 'left',
+                    1 => 'center',
+                ],
+            ],
         ],
     ],
 ];
