@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/30468274/162574530-f9af87ef-79d4-41de-8ddb-9ebf60563ac9.png)
+
 # Laravel-Editor.js
 
 A simple editor.js html parser for Laravel
