@@ -62,11 +62,12 @@ echo $post->body;
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
 -   [Al-Amin Firdows](https://github.com/alaminfirdows)
+-   [All Contributors](../../contributors)
 
 ## License
 
