@@ -60,14 +60,22 @@ $post = Post::find(1);
 echo $post->body;
 ```
 
+## Versioning
+
+| Laravel | Supported |
+| ------- | --------- |
+| 10.x    | ✅ 2.x    |
+| 9.x     | ✅ 1.1    |
+| 8.x     | ✅ 1.0    |
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
--   [Al-Amin Firdows](https://github.com/alaminfirdows)
--   [All Contributors](../../contributors)
+- [Al-Amin Firdows](https://github.com/alaminfirdows)
+- [All Contributors](../../contributors)
 
 ## License
 
