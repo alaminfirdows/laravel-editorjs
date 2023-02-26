@@ -1,23 +1,23 @@
 <?php
 
 return [
-    'config'    => [
+    'config' => [
         'tools' => [
             'paragraph' => [
-                'text'  => [
-                    'type'          => 'string',
-                    'allowedTags'   => 'i,b,a[href],code[class],mark[class]',
+                'text' => [
+                    'type'        => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                 ],
             ],
-            'header' => [
-                'text' => [
-                    'type' => 'string',
+            'header'    => [
+                'text'  => [
+                    'type'        => 'string',
                     'allowedTags' => 'a[href],mark[class]',
                 ],
                 'level' => [1, 2, 3, 4, 5, 6],
             ],
-            'list' => [
-                'style' => [
+            'list'      => [
+                'type'  => [
                     0 => 'ordered',
                     1 => 'unordered',
                 ],
@@ -25,35 +25,35 @@ return [
                     'type' => 'array',
                     'data' => [
                         '-' => [
-                            'type' => 'string',
+                            'type'        => 'string',
                             'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                         ],
                     ],
                 ],
             ],
-            'linkTool' => [
+            'linkTool'  => [
                 'link' => 'string',
                 'meta' => [
                     'type' => 'array',
                     'data' => [
-                        'title' => [
+                        'title'       => [
                             'type' => 'string',
                         ],
                         'description' => [
                             'type' => 'string',
                         ],
-                        'url' => [
-                            'type' => 'string',
+                        'url'         => [
+                            'type'     => 'string',
                             'required' => false,
                         ],
-                        'domain' => [
-                            'type' => 'string',
+                        'domain'      => [
+                            'type'     => 'string',
                             'required' => false,
                         ],
-                        'image' => [
-                            'type' => 'array',
+                        'image'       => [
+                            'type'     => 'array',
                             'required' => false,
-                            'data' => [
+                            'data'     => [
                                 'url' => [
                                     'type' => 'string',
                                 ],
@@ -62,39 +62,39 @@ return [
                     ],
                 ],
             ],
-            'image' => [
-                'file' => [
+            'image'     => [
+                'file'           => [
                     'type' => 'array',
                     'data' => [
-                        'width' => [
-                            'type' => 'integer',
+                        'width'  => [
+                            'type'     => 'integer',
                             'required' => false,
                         ],
                         'height' => [
-                            'type' => 'integer',
+                            'type'     => 'integer',
                             'required' => false,
                         ],
-                        'url' => 'string',
+                        'url'    => 'string',
                     ],
                 ],
-                'caption' => [
-                    'type' => 'string',
+                'caption'        => [
+                    'type'        => 'string',
                     'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                 ],
-                'withBorder' => 'boolean',
+                'withBorder'     => 'boolean',
                 'withBackground' => 'boolean',
-                'stretched' => 'boolean',
+                'stretched'      => 'boolean',
             ],
-            'table' => [
+            'table'     => [
                 'withHeadings' => 'boolean',
-                'content' => [
+                'content'      => [
                     'type' => 'array',
                     'data' => [
                         '-' => [
                             'type' => 'array',
                             'data' => [
                                 '-' => [
-                                    'type' => 'string',
+                                    'type'        => 'string',
                                     'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                                 ],
                             ],
@@ -102,13 +102,13 @@ return [
                     ],
                 ],
             ],
-            'quote' => [
-                'text' => [
-                    'type' => 'string',
+            'quote'     => [
+                'text'      => [
+                    'type'        => 'string',
                     'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                 ],
-                'caption' => [
-                    'type' => 'string',
+                'caption'   => [
+                    'type'        => 'string',
                     'allowedTags' => 'i,b,a[href],code[class],mark[class]',
                 ],
                 'alignment' => [
@@ -116,19 +116,31 @@ return [
                     1 => 'center',
                 ],
             ],
-            'code' => [
+            'code'      => [
                 'code' => [
-                    'type' => 'string',
+                    'type'        => 'string',
                     'allowedTags' => '*',
                 ],
             ],
             'delimiter' => [],
-            'raw' => [
+            'raw'       => [
                 'html' => [
-                    'type' => 'string',
+                    'type'        => 'string',
                     'allowedTags' => '*',
                 ],
             ],
+            // 'attaches'  => [
+            //     'file'  => [
+            //         'type' => 'array',
+            //         'data' => [
+            //             'url'       => 'string',
+            //             'size'      => 'integer',
+            //             'name'      => 'string',
+            //             'extension' => 'string',
+            //         ],
+            //     ],
+            //     'title' => 'string',
+            // ]
         ],
     ],
 ];

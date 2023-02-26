@@ -10,9 +10,9 @@
 		}
 	],
 	"require": {
-		"php": "^7.4|^8",
-		"codex-team/editor.js": "dev-master",
-		"illuminate/support": "^6|^7|^8|^9"
+		"php": "^7.2|^8.1",
+		"codex-team/editor.js": "v2.0.7",
+		"illuminate/support": "^8.0|^9.0|^10.0"
 	},
 	"require-dev": {
 		"orchestra/testbench": "^6.0",

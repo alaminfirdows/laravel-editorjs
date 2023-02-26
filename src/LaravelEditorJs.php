@@ -15,7 +15,7 @@ class LaravelEditorJs
      * @param string $data
      * @return string
      */
-    public function render(string $data): string
+    public function render(string $data) : string
     {
         try {
             $configJson = json_encode(config('laravel_editorjs.config') ?: []);
@@ -28,11 +28,14 @@ class LaravelEditorJs
 
                 $viewName = "laravel_editorjs::blocks." . Str::snake($block['type'], '-');
 
-                if (!View::exists($viewName)) {
+                if (! View::exists($viewName)) {
                     $viewName = 'laravel_editorjs::blocks.not-found';
                 }
 
-                $renderedBlocks[] = View::make($viewName, ['data' => $block['data']])->render();
+                $renderedBlocks[] = View::make($viewName, [
+                    'type' => $block['type'],
+                    'data' => $block['data']
+                ])->render();
             }
 
             return implode($renderedBlocks);
