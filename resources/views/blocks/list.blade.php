@@ -1,7 +1,9 @@
 @php
 $tag = 'ul';
-if('ordered' === $data['style']){
-$tag = 'ol';
+if (isset($data['style']) && 'ordered' === $data['style']) {
+    $tag = 'ol';
+} elseif (isset($data['type']) && 'ordered' === $data['type']) {
+    $tag = 'ol';
 }
 @endphp
 
