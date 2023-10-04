@@ -1,6 +1,6 @@
 @php
 $tag = 'ul';
-if('ordered' === $data['type']){
+if('ordered' === $data['style']){
 $tag = 'ol';
 }
 @endphp
