@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/.phpunit.cache
 composer.lock
 .env
 .env.backup
