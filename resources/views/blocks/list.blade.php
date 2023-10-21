@@ -1,8 +1,6 @@
 @php
-$tag = 'ul';
-if('ordered' === $data['type']){
-$tag = 'ol';
-}
+$listType = $data['style'] ?? $data['type'] ?? 'unordered';
+$tag = $listType === 'unordered' ? 'ul' : 'ol';
 @endphp
 
 <{{ $tag }}>
