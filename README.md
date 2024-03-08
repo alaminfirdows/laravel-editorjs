@@ -60,6 +60,11 @@ $post = Post::find(1);
 echo $post->body;
 ```
 
+## Override templates
+
+If you create a file with the same name in your resources/views/blocks/ directory (example: resources/views/blocks/table.blade.php) you can override the default template used for that block.
+Be aware these do not automatically update when you update versions so you will need to do manual updates.
+
 ## Versioning
 
 | Laravel | Supported |

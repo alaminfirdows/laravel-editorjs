@@ -27,7 +27,11 @@ class LaravelEditorJs
 
             foreach ($editor->getBlocks() as $block) {
 
-                $viewName = "laravel_editorjs::blocks." . Str::snake($block['type'], '-');
+                $viewName = "blocks." . Str::snake($block['type'], '-');
+
+                if (! View::exists($viewName)) {
+                    $viewName = 'laravel_editorjs::'. $viewName;
+                }
 
                 if (!View::exists($viewName)) {
                     $viewName = 'laravel_editorjs::blocks.not-found';
