@@ -4,8 +4,9 @@ namespace AlAminFirdows\LaravelEditorJs;
 
 use EditorJS\EditorJS;
 use EditorJS\EditorJSException;
-use Illuminate\Support\Str;
+use Exception;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 class LaravelEditorJs
 {
@@ -15,7 +16,7 @@ class LaravelEditorJs
      * @param string $data
      * @return string
      */
-    public function render(string $data) : string
+    public function render(string $data): string
     {
         try {
             $configJson = json_encode(config('laravel_editorjs.config') ?: []);
@@ -28,7 +29,7 @@ class LaravelEditorJs
 
                 $viewName = "laravel_editorjs::blocks." . Str::snake($block['type'], '-');
 
-                if (! View::exists($viewName)) {
+                if (!View::exists($viewName)) {
                     $viewName = 'laravel_editorjs::blocks.not-found';
                 }
 
@@ -40,7 +41,7 @@ class LaravelEditorJs
 
             return implode($renderedBlocks);
         } catch (EditorJSException $e) {
-            throw new \Exception($e->getMessage());
+            throw new Exception($e->getMessage());
         }
     }
 }
