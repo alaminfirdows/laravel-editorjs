@@ -7,7 +7,12 @@ A simple editor.js html parser for Laravel
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alaminfirdows/laravel-editorjs.svg?style=for-the-badge)](https://packagist.org/packages/alaminfirdows/laravel-editorjs)
 [![Total Downloads](https://img.shields.io/packagist/dt/alaminfirdows/laravel-editorjs.svg?style=for-the-badge)](https://packagist.org/packages/alaminfirdows/laravel-editorjs)
 
----
+## Features
+- Render Editor.js output
+- Custom block rendering
+
+## Demo
+You can can play with the demo [here](https://github.com/alaminfirdows/laravel-editorjs-demo)
 
 ## Installation
 
@@ -62,11 +67,11 @@ echo $post->body;
 
 ## Versioning
 
-| Laravel | Supported |
-| ------- | --------- |
-| 10.x    | ✅ 2.x    |
-| 9.x     | ✅ 1.1    |
-| 8.x     | ✅ 1.0    |
+| Laravel    | Supported |
+| ---------- | --------- |
+| 10.x, 11.x | ✅ 2.x    |
+| 9.x        | ✅ 1.1    |
+| 8.x        | ✅ 1.0    |
 
 ## Contributing
 
