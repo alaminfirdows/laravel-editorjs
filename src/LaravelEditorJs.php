@@ -2,9 +2,11 @@
 
 namespace AlAminFirdows\LaravelEditorJs;
 
+use AlAminFirdows\LaravelEditorJs\Rules\EditorJsRule;
 use EditorJS\EditorJS;
 use EditorJS\EditorJSException;
 use Exception;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 
@@ -44,5 +46,24 @@ class LaravelEditorJs
         } catch (EditorJSException $e) {
             throw new Exception($e->getMessage());
         }
+    }
+
+    /**
+     * Check if the data is valid
+     *
+     * @param string $data
+     * @return bool
+     */
+    public function isValid(string $data): bool
+    {
+        $validator = Validator::make(['data' => $data], [
+            'data' => ['required', 'string', new EditorJsRule]
+        ]);
+
+        if ($validator->passes()) {
+            return true;
+        }
+
+        return false;
     }
 }
