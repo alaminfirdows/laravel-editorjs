@@ -67,11 +67,11 @@ echo $post->body;
 
 ## Versioning
 
-| Laravel    | Supported |
-| ---------- | --------- |
-| 10.x, 11.x | ✅ 2.x    |
-| 9.x        | ✅ 1.1    |
-| 8.x        | ✅ 1.0    |
+| Laravel Version     | Package Version |
+|---------------------|-----------------|
+| 10.x, 11.x, 12.x     | ✅ 2.x          |
+| 9.x                  | ✅ 1.1          |
+| 8.x                  | ✅ 1.0          |
 
 ## Contributing
 
