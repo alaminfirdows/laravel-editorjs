@@ -46,7 +46,7 @@ class LaravelEditorJsServiceProvider extends ServiceProvider
          * @param mixed $blocks The blocks of content to be rendered.
          * @return string Rendered HTML content.
          */
-        Blade::directive('render', function ($blocks) {
+        Blade::directive('editorJsRender', function ($blocks) {
             return "<?php echo app('laravel-editorjs')->render($blocks); ?>";
         });
     }

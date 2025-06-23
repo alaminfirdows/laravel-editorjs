@@ -37,7 +37,7 @@ php artisan vendor:publish --tag="laravel_editorjs-views"
 ## Usage
 Blade Directive
 ```bladehtml
-@render($posts->body)
+@editorJsRender($posts->body)
 ```
 
 Facade
