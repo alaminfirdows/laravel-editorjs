@@ -3,6 +3,7 @@
 namespace AlAminFirdows\LaravelEditorJs;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class LaravelEditorJsServiceProvider extends ServiceProvider
 {
@@ -38,5 +39,15 @@ class LaravelEditorJsServiceProvider extends ServiceProvider
                 __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/laravel_editorjs'),
             ], 'laravel_editorjs-views');
         }
+
+        /**
+         * Blade directive to render editor.js blocks.
+         *
+         * @param mixed $blocks The blocks of content to be rendered.
+         * @return string Rendered HTML content.
+         */
+        Blade::directive('editorJsRender', function ($blocks) {
+            return "<?php echo app('laravel-editorjs')->render($blocks); ?>";
+        });
     }
 }

@@ -35,7 +35,12 @@ php artisan vendor:publish --tag="laravel_editorjs-views"
 ```
 
 ## Usage
+Blade Directive
+```bladehtml
+@editorJsRender($posts->body)
+```
 
+Facade
 ```php
 use App\Models\Post;
 
