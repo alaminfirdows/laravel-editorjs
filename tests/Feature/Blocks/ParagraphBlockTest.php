@@ -21,7 +21,7 @@ class ParagraphBlockTest extends TestCase
         return "<p>Hello world!</p>";
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_paragraph_block_test(): void
     {
         $this->assertEquals(
