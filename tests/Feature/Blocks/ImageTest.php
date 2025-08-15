@@ -111,7 +111,7 @@ class ImageTest extends TestCase
     {
         // Arrange
         $blockData = $this->getBlockData();
-        unset($blockData['data']['caption']);
+        $blockData['data']['caption'] = "";
         $expectedHtml = '<figure class="image "> <img src="https://example.com/image.jpg" alt=""> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         

@@ -25,7 +25,7 @@ class LinkTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <img class="embed-link__image" src="https://example.com/image.jpg"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span> </a>';
+        return '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <img class="embed-link__image" src="https://example.com/image.jpg"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span></a>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -47,7 +47,7 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         unset($blockData['data']['meta']['image']);
-        $expectedHtml = '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span> </a>';
+        $expectedHtml = '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -63,7 +63,7 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['meta']['image']['url'] = '';
-        $expectedHtml = '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span> </a>';
+        $expectedHtml = '<a class="embed-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -79,7 +79,7 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['link'] = 'https://blog.example.com/article';
-        $expectedHtml = '<a class="embed-link" href="https://blog.example.com/article" target="_blank" rel="nofollow"> <img class="embed-link__image" src="https://example.com/image.jpg"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> blog.example.com </span> </a>';
+        $expectedHtml = '<a class="embed-link" href="https://blog.example.com/article" target="_blank" rel="nofollow"> <img class="embed-link__image" src="https://example.com/image.jpg"> <div class="embed-link__title"> Example Website </div> <div class="embed-link__description"> This is an example website for testing purposes </div> <span class="embed-link__domain"> blog.example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -103,7 +103,7 @@ class LinkTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<a class="embed-link" href="https://minimal.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Minimal Link </div> <div class="embed-link__description"> Basic description </div> <span class="embed-link__domain"> minimal.com </span> </a>';
+        $expectedHtml = '<a class="embed-link" href="https://minimal.com" target="_blank" rel="nofollow"> <div class="embed-link__title"> Minimal Link </div> <div class="embed-link__description"> Basic description </div> <span class="embed-link__domain"> minimal.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

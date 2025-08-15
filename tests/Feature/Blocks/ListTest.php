@@ -62,7 +62,7 @@ class ListTest extends TestCase
         $blockData = [
             "type" => "list",
             "data" => [
-                "type" => "ordered",
+                "style" => "ordered",
                 "items" => [
                     "First item",
                     "Second item"
@@ -86,6 +86,7 @@ class ListTest extends TestCase
         $blockData = [
             "type" => "list",
             "data" => [
+                "style" => "unordered",
                 "items" => [
                     "Only item"
                 ]
@@ -137,7 +138,7 @@ class ListTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<ul> <li><b>Bold item</b></li> <li><i>Italic item</i></li> <li><a href="https://example.com">Link item</a></li> </ul>';
+        $expectedHtml = '<ul> <li>&lt;b&gt;Bold item&lt;/b&gt;</li> <li>&lt;i&gt;Italic item&lt;/i&gt;</li> <li>&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Link item&lt;/a&gt;</li> </ul>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

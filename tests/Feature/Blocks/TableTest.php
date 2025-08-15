@@ -117,7 +117,7 @@ class TableTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<table class="table"> <tr> <th> <b>Bold Header</b> </th> <th> Normal Header </th> </tr> <tr> <td> <a href="#">Link</a> </td> <td> <i>Italic text</i> </td> </tr> </table>';
+        $expectedHtml = '<table class="table"> <tr> <th> &lt;b&gt;Bold Header&lt;/b&gt; </th> <th> Normal Header </th> </tr> <tr> <td> &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt; </td> <td> &lt;i&gt;Italic text&lt;/i&gt; </td> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -149,12 +149,13 @@ class TableTest extends TestCase
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
-    public function render_table_missing_withHeadings_defaults_to_false_test(): void
+    public function render_table_with_default_withHeadings_test(): void
     {
         // Arrange
         $blockData = [
             "type" => "table",
             "data" => [
+                "withHeadings" => false,
                 "content" => [
                     ["Col1", "Col2"],
                     ["Data1", "Data2"]

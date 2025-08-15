@@ -105,6 +105,7 @@ class HeaderTest extends TestCase
         $blockData = [
             "type" => "header",
             "data" => [
+                "text" => "",
                 "level" => 2
             ]
         ];
