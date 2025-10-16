@@ -22,7 +22,7 @@ class ListBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<ul>        <li>Hello</li>        <li>World</li>    </ul>";
+        return "<ul class=\"editorjs-list editorjs-list--unordered\">        <li class=\"editorjs-list__item editorjs-list__item--odd\">Hello</li>        <li class=\"editorjs-list__item editorjs-list__item--even\">World</li>    </ul>";
     }
 
     /** @test */

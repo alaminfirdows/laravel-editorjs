@@ -18,7 +18,7 @@ class ParagraphBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<p>Hello world!</p>";
+        return "<p class=\"editorjs-paragraph\">Hello world!</p>";
     }
 
     /** @test */
