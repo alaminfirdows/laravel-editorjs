@@ -39,7 +39,7 @@ class ChecklistTest extends TestCase
         return '<ul> <li> <input type="checkbox" checked disabled> <span><a href="https://githuh.com/lmottasin" target="_blank" rel="noreferrer noopener">LINK</a></span> </li> <li> <input type="checkbox" disabled> <span><b>BOLD</b></span> </li> <li> <input type="checkbox" disabled> <span><i>ITALIC</i></span> </li> <li> <input type="checkbox" disabled> <span>PLAIN TEXT</span> </li> </ul>';
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_checklist_block_test(): void
     {
         //This replaces any sequence of whitespace (including tabs and newlines) with a single space,
