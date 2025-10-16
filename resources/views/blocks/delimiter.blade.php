@@ -1,1 +1,1 @@
-<div class="editor-delimiter" style="text-align: center;">***</div>
+<div class="editorjs-delimiter" style="text-align: center;">***</div>

@@ -18,10 +18,10 @@ class ParagraphBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<p>Hello world!</p>";
+        return "<p class=\"editorjs-paragraph\">Hello world!</p>";
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_paragraph_block_test(): void
     {
         $this->assertEquals(

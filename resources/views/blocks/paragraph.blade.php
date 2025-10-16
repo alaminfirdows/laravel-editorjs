@@ -1,1 +1,1 @@
-<p>{{ $data['text'] }}</p>
+<p class="editorjs-paragraph">{{ $data['text'] }}</p>

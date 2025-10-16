@@ -58,7 +58,7 @@ class EmbedBlockTest extends TestCase
         return '<div class="editorjs-embed"><div class="editorjs-embed__content editorjs-embed__content--twitter"><div class="editorjs-embed__twitter"><blockquote class="twitter-tweet"><a href="https://twitter.com/jack/status/20"></a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div></div><div class="editorjs-embed__caption">Test Twitter Caption</div></div>';
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_youtube_embed_block_test(): void
     {
         $this->assertHtml(
@@ -67,7 +67,7 @@ class EmbedBlockTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_twitter_embed_block_test(): void
     {
         $this->assertHtml(
@@ -76,7 +76,7 @@ class EmbedBlockTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_embed_block_with_custom_dimensions_test(): void
     {
         $blockData = $this->getYoutubeBlockData();
