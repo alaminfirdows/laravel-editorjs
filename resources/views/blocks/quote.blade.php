@@ -10,9 +10,9 @@ $class = 'text-right';
 }
 @endphp
 
-<blockquote class="editor-quote">
-    <p class="{{ $class }}">{{ $data['text'] }}</p>
+<blockquote class="editorjs-quote">
+    <p class="editorjs-quote__text {{ $class }}">{{ $data['text'] }}</p>
     @if (!empty($data['caption']))
-    <small class="{{ $class }}">— {{ $data['caption'] }}</small>
+    <small class="editorjs-quote__caption {{ $class }}">— {{ $data['caption'] }}</small>
     @endif
 </blockquote>

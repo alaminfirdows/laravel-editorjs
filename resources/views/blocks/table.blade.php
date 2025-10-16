@@ -1,10 +1,10 @@
-<table class="table">
+<table class="editorjs-table">
     @foreach($data['content'] as $row)
-    <tr>
+    <tr class="editorjs-table__row">
         @php $tag = ($loop->first && $data['withHeadings']) ? 'th' : 'td'; @endphp
 
         @foreach($row as $cell)
-        <{{ $tag }}> {{ $cell }} </{{ $tag }}>
+        <{{ $tag }} class="editorjs-table__cell"> {{ $cell }} </{{ $tag }}>
         @endforeach
     </tr>
     @endforeach
