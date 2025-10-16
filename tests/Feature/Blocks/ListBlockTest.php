@@ -25,7 +25,7 @@ class ListBlockTest extends TestCase
         return "<ul class=\"editorjs-list editorjs-list--unordered\">        <li class=\"editorjs-list__item editorjs-list__item--odd\">Hello</li>        <li class=\"editorjs-list__item editorjs-list__item--even\">World</li>    </ul>";
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function render_paragraph_block_test(): void
     {
         $this->assertEquals(
