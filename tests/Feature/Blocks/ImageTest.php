@@ -24,7 +24,7 @@ class ImageTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<figure class="image "> <img src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="image-caption"> Sample image caption </footer> </figure>';
+        return '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -46,7 +46,7 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['withBorder'] = true;
-        $expectedHtml = '<figure class="image image--bordered"> <img src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="image-caption"> Sample image caption </footer> </figure>';
+    $expectedHtml = '<figure class="editorjs-image editorjs-image--bordered"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -62,7 +62,7 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['stretched'] = true;
-        $expectedHtml = '<figure class="image image--stretched"> <img src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="image-caption"> Sample image caption </footer> </figure>';
+    $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -78,7 +78,7 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['withBackground'] = true;
-        $expectedHtml = '<figure class="image image--backgrounded"> <img src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="image-caption"> Sample image caption </footer> </figure>';
+    $expectedHtml = '<figure class="editorjs-image editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -96,7 +96,7 @@ class ImageTest extends TestCase
         $blockData['data']['withBorder'] = true;
         $blockData['data']['stretched'] = true;
         $blockData['data']['withBackground'] = true;
-        $expectedHtml = '<figure class="image image--stretched image--bordered image--backgrounded"> <img src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="image-caption"> Sample image caption </footer> </figure>';
+    $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched editorjs-image--bordered editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -112,7 +112,7 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = "";
-        $expectedHtml = '<figure class="image "> <img src="https://example.com/image.jpg" alt=""> </figure>';
+    $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -128,7 +128,7 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = '';
-        $expectedHtml = '<figure class="image "> <img src="https://example.com/image.jpg" alt=""> </figure>';
+    $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

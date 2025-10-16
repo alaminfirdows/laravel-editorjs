@@ -20,7 +20,7 @@ class QuoteTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<blockquote class="editor-quote"> <p class="text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="text-left">— Quote Author</small> </blockquote>';
+        return '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-left">— Quote Author</small> </blockquote>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -42,7 +42,7 @@ class QuoteTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['alignment'] = 'center';
-        $expectedHtml = '<blockquote class="editor-quote"> <p class="text-center">This is a quote text that demonstrates the quote block functionality.</p> <small class="text-center">— Quote Author</small> </blockquote>';
+    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-center">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-center">— Quote Author</small> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -58,7 +58,7 @@ class QuoteTest extends TestCase
         // Arrange  
         $blockData = $this->getBlockData();
         $blockData['data']['alignment'] = 'left'; // Test left alignment as default is not supported
-        $expectedHtml = '<blockquote class="editor-quote"> <p class="text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="text-left">— Quote Author</small> </blockquote>';
+    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-left">— Quote Author</small> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -74,7 +74,7 @@ class QuoteTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = "";
-        $expectedHtml = '<blockquote class="editor-quote"> <p class="text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
+    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -90,7 +90,7 @@ class QuoteTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = '';
-        $expectedHtml = '<blockquote class="editor-quote"> <p class="text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
+    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

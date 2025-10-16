@@ -19,7 +19,7 @@ class HeaderTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<h2>This is a Header</h2>';
+        return '<h2 class="editorjs-header editorjs-header--level-2">This is a Header</h2>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -46,7 +46,7 @@ class HeaderTest extends TestCase
                 "level" => 1
             ]
         ];
-        $expectedHtml = '<h1>Main Title</h1>';
+    $expectedHtml = '<h1 class="editorjs-header editorjs-header--level-1">Main Title</h1>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -67,7 +67,7 @@ class HeaderTest extends TestCase
                 "level" => 3
             ]
         ];
-        $expectedHtml = '<h3>Subtitle</h3>';
+    $expectedHtml = '<h3 class="editorjs-header editorjs-header--level-3">Subtitle</h3>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -88,7 +88,7 @@ class HeaderTest extends TestCase
                 "level" => 1
             ]
         ];
-        $expectedHtml = '<h1>Default Header</h1>';
+    $expectedHtml = '<h1 class="editorjs-header editorjs-header--level-1">Default Header</h1>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -109,7 +109,7 @@ class HeaderTest extends TestCase
                 "level" => 2
             ]
         ];
-        $expectedHtml = '<h2></h2>';
+    $expectedHtml = '<h2 class="editorjs-header editorjs-header--level-2"></h2>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

@@ -18,7 +18,7 @@ class CodeTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<div class="editor-code"> <code class="code__content">&amp;lt;?phpecho &amp;#039;Hello World!&amp;#039;;// This is a commentfunction test() { return true;}</code></div>';
+        return '<div class="editorjs-code"> <code class="editorjs-code__content">&amp;lt;?phpecho &amp;#039;Hello World!&amp;#039;;// This is a commentfunction test() { return true;}</code></div>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -44,7 +44,7 @@ class CodeTest extends TestCase
                 "code" => "<script>alert('XSS');</script>\n&amp; special chars"
             ]
         ];
-        $expectedHtml = '<div class="editor-code"> <code class="code__content">&amp;lt;script&amp;gt;alert(&amp;#039;XSS&amp;#039;);&amp;lt;/script&amp;gt;&amp;amp;amp; special chars</code></div>';
+    $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content">&amp;lt;script&amp;gt;alert(&amp;#039;XSS&amp;#039;);&amp;lt;/script&amp;gt;&amp;amp;amp; special chars</code></div>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -64,7 +64,7 @@ class CodeTest extends TestCase
                 "code" => ""
             ]
         ];
-        $expectedHtml = '<div class="editor-code"> <code class="code__content"></code></div>';
+    $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content"></code></div>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

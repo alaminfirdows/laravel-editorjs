@@ -23,7 +23,7 @@ class TableTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<table class="table"> <tr> <th> Name </th> <th> Age </th> <th> City </th> </tr> <tr> <td> John Doe </td> <td> 30 </td> <td> New York </td> </tr> <tr> <td> Jane Smith </td> <td> 25 </td> <td> Los Angeles </td> </tr> </table>';
+        return '<table class="editorjs-table"> <tr class="editorjs-table__row"> <th class="editorjs-table__cell"> Name </th> <th class="editorjs-table__cell"> Age </th> <th class="editorjs-table__cell"> City </th> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> John Doe </td> <td class="editorjs-table__cell"> 30 </td> <td class="editorjs-table__cell"> New York </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> Jane Smith </td> <td class="editorjs-table__cell"> 25 </td> <td class="editorjs-table__cell"> Los Angeles </td> </tr> </table>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -45,7 +45,7 @@ class TableTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['withHeadings'] = false;
-        $expectedHtml = '<table class="table"> <tr> <td> Name </td> <td> Age </td> <td> City </td> </tr> <tr> <td> John Doe </td> <td> 30 </td> <td> New York </td> </tr> <tr> <td> Jane Smith </td> <td> 25 </td> <td> Los Angeles </td> </tr> </table>';
+    $expectedHtml = '<table class="editorjs-table"> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> Name </td> <td class="editorjs-table__cell"> Age </td> <td class="editorjs-table__cell"> City </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> John Doe </td> <td class="editorjs-table__cell"> 30 </td> <td class="editorjs-table__cell"> New York </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> Jane Smith </td> <td class="editorjs-table__cell"> 25 </td> <td class="editorjs-table__cell"> Los Angeles </td> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -68,7 +68,7 @@ class TableTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<table class="table"> <tr> <th> Header 1 </th> <th> Header 2 </th> </tr> </table>';
+    $expectedHtml = '<table class="editorjs-table"> <tr class="editorjs-table__row"> <th class="editorjs-table__cell"> Header 1 </th> <th class="editorjs-table__cell"> Header 2 </th> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -93,7 +93,7 @@ class TableTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<table class="table"> <tr> <td> A </td> <td> </td> <td> C </td> </tr> <tr> <td> </td> <td> E </td> <td> </td> </tr> <tr> <td> G </td> <td> H </td> <td> I </td> </tr> </table>';
+    $expectedHtml = '<table class="editorjs-table"> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> A </td> <td class="editorjs-table__cell"> </td> <td class="editorjs-table__cell"> C </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> </td> <td class="editorjs-table__cell"> E </td> <td class="editorjs-table__cell"> </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> G </td> <td class="editorjs-table__cell"> H </td> <td class="editorjs-table__cell"> I </td> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -117,7 +117,7 @@ class TableTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<table class="table"> <tr> <th> &lt;b&gt;Bold Header&lt;/b&gt; </th> <th> Normal Header </th> </tr> <tr> <td> &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt; </td> <td> &lt;i&gt;Italic text&lt;/i&gt; </td> </tr> </table>';
+    $expectedHtml = '<table class="editorjs-table"> <tr class="editorjs-table__row"> <th class="editorjs-table__cell"> &lt;b&gt;Bold Header&lt;/b&gt; </th> <th class="editorjs-table__cell"> Normal Header </th> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt; </td> <td class="editorjs-table__cell"> &lt;i&gt;Italic text&lt;/i&gt; </td> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -138,7 +138,7 @@ class TableTest extends TestCase
                 "content" => []
             ]
         ];
-        $expectedHtml = '<table class="table"> </table>';
+    $expectedHtml = '<table class="editorjs-table"> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -162,7 +162,7 @@ class TableTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<table class="table"> <tr> <td> Col1 </td> <td> Col2 </td> </tr> <tr> <td> Data1 </td> <td> Data2 </td> </tr> </table>';
+    $expectedHtml = '<table class="editorjs-table"> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> Col1 </td> <td class="editorjs-table__cell"> Col2 </td> </tr> <tr class="editorjs-table__row"> <td class="editorjs-table__cell"> Data1 </td> <td class="editorjs-table__cell"> Data2 </td> </tr> </table>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act

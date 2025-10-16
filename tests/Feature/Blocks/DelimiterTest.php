@@ -16,7 +16,7 @@ class DelimiterTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<div class="editor-delimiter" style="text-align: center;">***</div>';
+        return '<div class="editorjs-delimiter" style="text-align: center;">***</div>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

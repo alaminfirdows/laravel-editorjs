@@ -18,7 +18,7 @@ class ParagraphTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return '<p>This is a simple paragraph with some text content.</p>';
+        return '<p class="editorjs-paragraph">This is a simple paragraph with some text content.</p>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
@@ -44,7 +44,7 @@ class ParagraphTest extends TestCase
                 "text" => "This paragraph contains <b>bold</b>, <i>italic</i>, and <a href=\"https://example.com\">link</a> elements."
             ]
         ];
-        $expectedHtml = '<p>This paragraph contains &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, and &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;link&lt;/a&gt; elements.</p>';
+    $expectedHtml = '<p class="editorjs-paragraph">This paragraph contains &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, and &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;link&lt;/a&gt; elements.</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -64,7 +64,7 @@ class ParagraphTest extends TestCase
                 "text" => ""
             ]
         ];
-        $expectedHtml = '<p></p>';
+    $expectedHtml = '<p class="editorjs-paragraph"></p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -84,7 +84,7 @@ class ParagraphTest extends TestCase
                 "text" => "This is line one\nThis is line two\nThis is line three"
             ]
         ];
-        $expectedHtml = '<p>This is line oneThis is line twoThis is line three</p>';
+    $expectedHtml = '<p class="editorjs-paragraph">This is line oneThis is line twoThis is line three</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -104,7 +104,7 @@ class ParagraphTest extends TestCase
                 "text" => "Special chars: &amp; &lt; &gt; &quot; &#39;"
             ]
         ];
-        $expectedHtml = '<p>Special chars: &amp;amp; &amp;lt; &amp;gt; &quot; &#039;</p>';
+    $expectedHtml = '<p class="editorjs-paragraph">Special chars: &amp;amp; &amp;lt; &amp;gt; &quot; &#039;</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -132,7 +132,7 @@ class ParagraphTest extends TestCase
                 ]
             ]
         ];
-        $expectedHtml = '<p>First paragraph</p><p>Second paragraph</p>';
+    $expectedHtml = '<p class="editorjs-paragraph">First paragraph</p><p class="editorjs-paragraph">Second paragraph</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
