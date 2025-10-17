@@ -50,7 +50,8 @@ class EditorJsRule implements ValidationRule
     /**
      * Handle EditorJS exceptions and call the fail closure with appropriate messages
      *
-     * @param Closure(string): void $fail
+     * @param \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString $fail
+     * @param array<int, array<string, mixed>> $blocks
      */
     private function handleEditorJSException(EditorJSException $e, array $blocks, Closure $fail): void
     {
@@ -92,6 +93,8 @@ class EditorJsRule implements ValidationRule
 
     /**
      * Find block index by type
+     *
+     * @param array<int, array<string, mixed>> $blocks
      */
     private function findBlockIndex(array $blocks, string $type): ?int
     {
@@ -106,6 +109,9 @@ class EditorJsRule implements ValidationRule
 
     /**
      * Find parameter location in blocks
+     *
+     * @param array<int, array<string, mixed>> $blocks
+     * @return array{blockIndex:int,blockType:string}|null
      */
     private function findParameterLocation(array $blocks, string $param): ?array
     {
