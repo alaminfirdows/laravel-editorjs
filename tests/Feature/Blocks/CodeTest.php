@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,10 +11,10 @@ class CodeTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "code",
-            "data" => [
-                "code" => "<?php\n\necho 'Hello World!';\n\n// This is a comment\nfunction test() {\n    return true;\n}"
-            ]
+            'type' => 'code',
+            'data' => [
+                'code' => "<?php\n\necho 'Hello World!';\n\n// This is a comment\nfunction test() {\n    return true;\n}",
+            ],
         ];
     }
 
@@ -26,7 +28,7 @@ class CodeTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -39,14 +41,14 @@ class CodeTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "code",
-            "data" => [
-                "code" => "<script>alert('XSS');</script>\n&amp; special chars"
-            ]
+            'type' => 'code',
+            'data' => [
+                'code' => "<script>alert('XSS');</script>\n&amp; special chars",
+            ],
         ];
-    $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content">&amp;lt;script&amp;gt;alert(&amp;#039;XSS&amp;#039;);&amp;lt;/script&amp;gt;&amp;amp;amp; special chars</code></div>';
+        $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content">&amp;lt;script&amp;gt;alert(&amp;#039;XSS&amp;#039;);&amp;lt;/script&amp;gt;&amp;amp;amp; special chars</code></div>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -59,14 +61,14 @@ class CodeTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "code",
-            "data" => [
-                "code" => ""
-            ]
+            'type' => 'code',
+            'data' => [
+                'code' => '',
+            ],
         ];
-    $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content"></code></div>';
+        $expectedHtml = '<div class="editorjs-code"> <code class="editorjs-code__content"></code></div>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 

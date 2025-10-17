@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,10 +11,10 @@ class ParagraphTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "paragraph",
-            "data" => [
-                "text" => "This is a simple paragraph with some text content."
-            ]
+            'type' => 'paragraph',
+            'data' => [
+                'text' => 'This is a simple paragraph with some text content.',
+            ],
         ];
     }
 
@@ -26,7 +28,7 @@ class ParagraphTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -39,14 +41,14 @@ class ParagraphTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "paragraph",
-            "data" => [
-                "text" => "This paragraph contains <b>bold</b>, <i>italic</i>, and <a href=\"https://example.com\">link</a> elements."
-            ]
+            'type' => 'paragraph',
+            'data' => [
+                'text' => 'This paragraph contains <b>bold</b>, <i>italic</i>, and <a href="https://example.com">link</a> elements.',
+            ],
         ];
-    $expectedHtml = '<p class="editorjs-paragraph">This paragraph contains &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, and &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;link&lt;/a&gt; elements.</p>';
+        $expectedHtml = '<p class="editorjs-paragraph">This paragraph contains &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, and &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;link&lt;/a&gt; elements.</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -59,14 +61,14 @@ class ParagraphTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "paragraph",
-            "data" => [
-                "text" => ""
-            ]
+            'type' => 'paragraph',
+            'data' => [
+                'text' => '',
+            ],
         ];
-    $expectedHtml = '<p class="editorjs-paragraph"></p>';
+        $expectedHtml = '<p class="editorjs-paragraph"></p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -79,14 +81,14 @@ class ParagraphTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "paragraph",
-            "data" => [
-                "text" => "This is line one\nThis is line two\nThis is line three"
-            ]
+            'type' => 'paragraph',
+            'data' => [
+                'text' => "This is line one\nThis is line two\nThis is line three",
+            ],
         ];
-    $expectedHtml = '<p class="editorjs-paragraph">This is line oneThis is line twoThis is line three</p>';
+        $expectedHtml = '<p class="editorjs-paragraph">This is line oneThis is line twoThis is line three</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -99,14 +101,14 @@ class ParagraphTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "paragraph",
-            "data" => [
-                "text" => "Special chars: &amp; &lt; &gt; &quot; &#39;"
-            ]
+            'type' => 'paragraph',
+            'data' => [
+                'text' => 'Special chars: &amp; &lt; &gt; &quot; &#39;',
+            ],
         ];
-    $expectedHtml = '<p class="editorjs-paragraph">Special chars: &amp;amp; &amp;lt; &amp;gt; &quot; &#039;</p>';
+        $expectedHtml = '<p class="editorjs-paragraph">Special chars: &amp;amp; &amp;lt; &amp;gt; &quot; &#039;</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -120,21 +122,21 @@ class ParagraphTest extends TestCase
         // Arrange
         $blocks = [
             [
-                "type" => "paragraph",
-                "data" => [
-                    "text" => "First paragraph"
-                ]
+                'type' => 'paragraph',
+                'data' => [
+                    'text' => 'First paragraph',
+                ],
             ],
             [
-                "type" => "paragraph",
-                "data" => [
-                    "text" => "Second paragraph"
-                ]
-            ]
+                'type' => 'paragraph',
+                'data' => [
+                    'text' => 'Second paragraph',
+                ],
+            ],
         ];
-    $expectedHtml = '<p class="editorjs-paragraph">First paragraph</p><p class="editorjs-paragraph">Second paragraph</p>';
+        $expectedHtml = '<p class="editorjs-paragraph">First paragraph</p><p class="editorjs-paragraph">Second paragraph</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData($blocks)));
 

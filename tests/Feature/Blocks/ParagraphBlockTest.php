@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -18,7 +20,7 @@ class ParagraphBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<p class=\"editorjs-paragraph\">Hello world!</p>";
+        return '<p class="editorjs-paragraph">Hello world!</p>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

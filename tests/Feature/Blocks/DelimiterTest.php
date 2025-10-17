@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,8 +11,8 @@ class DelimiterTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "delimiter",
-            "data" => []
+            'type' => 'delimiter',
+            'data' => [],
         ];
     }
 
@@ -24,7 +26,7 @@ class DelimiterTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -39,11 +41,11 @@ class DelimiterTest extends TestCase
         $blocks = [
             $this->getBlockData(),
             $this->getBlockData(),
-            $this->getBlockData()
+            $this->getBlockData(),
         ];
         $expectedHtml = str_repeat($this->getBlockHtml(), 3);
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData($blocks)));
 

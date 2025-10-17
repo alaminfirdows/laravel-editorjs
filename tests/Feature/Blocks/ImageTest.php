@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,16 +11,16 @@ class ImageTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "image",
-            "data" => [
-                "file" => [
-                    "url" => "https://example.com/image.jpg"
+            'type' => 'image',
+            'data' => [
+                'file' => [
+                    'url' => 'https://example.com/image.jpg',
                 ],
-                "caption" => "Sample image caption",
-                "withBorder" => false,
-                "stretched" => false,
-                "withBackground" => false
-            ]
+                'caption' => 'Sample image caption',
+                'withBorder' => false,
+                'stretched' => false,
+                'withBackground' => false,
+            ],
         ];
     }
 
@@ -32,7 +34,7 @@ class ImageTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -46,9 +48,9 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['withBorder'] = true;
-    $expectedHtml = '<figure class="editorjs-image editorjs-image--bordered"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
+        $expectedHtml = '<figure class="editorjs-image editorjs-image--bordered"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -62,9 +64,9 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['stretched'] = true;
-    $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
+        $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -78,9 +80,9 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['withBackground'] = true;
-    $expectedHtml = '<figure class="editorjs-image editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
+        $expectedHtml = '<figure class="editorjs-image editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -96,9 +98,9 @@ class ImageTest extends TestCase
         $blockData['data']['withBorder'] = true;
         $blockData['data']['stretched'] = true;
         $blockData['data']['withBackground'] = true;
-    $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched editorjs-image--bordered editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
+        $expectedHtml = '<figure class="editorjs-image editorjs-image--stretched editorjs-image--bordered editorjs-image--backgrounded"> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt="Sample image caption"> <footer class="editorjs-image__caption"> Sample image caption </footer> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -111,10 +113,10 @@ class ImageTest extends TestCase
     {
         // Arrange
         $blockData = $this->getBlockData();
-        $blockData['data']['caption'] = "";
-    $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
+        $blockData['data']['caption'] = '';
+        $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -128,9 +130,9 @@ class ImageTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = '';
-    $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
+        $expectedHtml = '<figure class="editorjs-image "> <img class="editorjs-image__media" src="https://example.com/image.jpg" alt=""> </figure>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
