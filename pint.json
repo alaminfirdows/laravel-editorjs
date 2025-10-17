@@ -1,0 +1,45 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "declare_strict_types": true,
+        "concat_space": {
+            "spacing": "one"
+        },
+        "phpdoc_align": {
+            "align": "left",
+            "spacing": 1
+        },
+        "not_operator_with_successor_space": false,
+        "phpdoc_separation": {
+            "groups": [
+                [
+                    "deprecated",
+                    "link",
+                    "see",
+                    "since"
+                ],
+                [
+                    "author",
+                    "copyright",
+                    "license"
+                ],
+                [
+                    "category",
+                    "package",
+                    "subpackage"
+                ],
+                [
+                    "property",
+                    "property-read",
+                    "property-write"
+                ],
+                [
+                    "param"
+                ],
+                [
+                    "return"
+                ]
+            ]
+        }
+    }
+}

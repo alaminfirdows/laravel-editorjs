@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,17 +11,17 @@ class LinkTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "linkTool",
-            "data" => [
-                "link" => "https://example.com",
-                "meta" => [
-                    "title" => "Example Website",
-                    "description" => "This is an example website for testing purposes",
-                    "image" => [
-                        "url" => "https://example.com/image.jpg"
-                    ]
-                ]
-            ]
+            'type' => 'linkTool',
+            'data' => [
+                'link' => 'https://example.com',
+                'meta' => [
+                    'title' => 'Example Website',
+                    'description' => 'This is an example website for testing purposes',
+                    'image' => [
+                        'url' => 'https://example.com/image.jpg',
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -33,7 +35,7 @@ class LinkTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -47,9 +49,9 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         unset($blockData['data']['meta']['image']);
-    $expectedHtml = '<a class="editorjs-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> example.com </span></a>';
+        $expectedHtml = '<a class="editorjs-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -63,9 +65,9 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['meta']['image']['url'] = '';
-    $expectedHtml = '<a class="editorjs-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> example.com </span></a>';
+        $expectedHtml = '<a class="editorjs-link" href="https://example.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -79,9 +81,9 @@ class LinkTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['link'] = 'https://blog.example.com/article';
-    $expectedHtml = '<a class="editorjs-link" href="https://blog.example.com/article" target="_blank" rel="nofollow"> <img class="editorjs-link__image" src="https://example.com/image.jpg"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> blog.example.com </span></a>';
+        $expectedHtml = '<a class="editorjs-link" href="https://blog.example.com/article" target="_blank" rel="nofollow"> <img class="editorjs-link__image" src="https://example.com/image.jpg"> <div class="editorjs-link__title"> Example Website </div> <div class="editorjs-link__description"> This is an example website for testing purposes </div> <span class="editorjs-link__domain"> blog.example.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -94,18 +96,18 @@ class LinkTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "linkTool",
-            "data" => [
-                "link" => "https://minimal.com",
-                "meta" => [
-                    "title" => "Minimal Link",
-                    "description" => "Basic description"
-                ]
-            ]
+            'type' => 'linkTool',
+            'data' => [
+                'link' => 'https://minimal.com',
+                'meta' => [
+                    'title' => 'Minimal Link',
+                    'description' => 'Basic description',
+                ],
+            ],
         ];
-    $expectedHtml = '<a class="editorjs-link" href="https://minimal.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Minimal Link </div> <div class="editorjs-link__description"> Basic description </div> <span class="editorjs-link__domain"> minimal.com </span></a>';
+        $expectedHtml = '<a class="editorjs-link" href="https://minimal.com" target="_blank" rel="nofollow"> <div class="editorjs-link__title"> Minimal Link </div> <div class="editorjs-link__description"> Basic description </div> <span class="editorjs-link__domain"> minimal.com </span></a>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 

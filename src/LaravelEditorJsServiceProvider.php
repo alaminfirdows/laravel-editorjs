@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
 class LaravelEditorJsServiceProvider extends ServiceProvider
 {
@@ -44,6 +46,7 @@ class LaravelEditorJsServiceProvider extends ServiceProvider
          * Blade directive to render editor.js blocks.
          *
          * @param mixed $blocks The blocks of content to be rendered.
+         *
          * @return string Rendered HTML content.
          */
         Blade::directive('editorJsRender', function ($blocks) {

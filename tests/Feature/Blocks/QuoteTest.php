@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,12 +11,12 @@ class QuoteTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "quote",
-            "data" => [
-                "text" => "This is a quote text that demonstrates the quote block functionality.",
-                "caption" => "Quote Author",
-                "alignment" => "left"
-            ]
+            'type' => 'quote',
+            'data' => [
+                'text' => 'This is a quote text that demonstrates the quote block functionality.',
+                'caption' => 'Quote Author',
+                'alignment' => 'left',
+            ],
         ];
     }
 
@@ -28,7 +30,7 @@ class QuoteTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -42,9 +44,9 @@ class QuoteTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['alignment'] = 'center';
-    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-center">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-center">— Quote Author</small> </blockquote>';
+        $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-center">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-center">— Quote Author</small> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -55,12 +57,12 @@ class QuoteTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function render_quote_default_alignment_test(): void
     {
-        // Arrange  
+        // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['alignment'] = 'left'; // Test left alignment as default is not supported
-    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-left">— Quote Author</small> </blockquote>';
+        $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> <small class="editorjs-quote__caption text-left">— Quote Author</small> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -73,10 +75,10 @@ class QuoteTest extends TestCase
     {
         // Arrange
         $blockData = $this->getBlockData();
-        $blockData['data']['caption'] = "";
-    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
+        $blockData['data']['caption'] = '';
+        $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -90,15 +92,13 @@ class QuoteTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['caption'] = '';
-    $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
+        $expectedHtml = '<blockquote class="editorjs-quote"> <p class="editorjs-quote__text text-left">This is a quote text that demonstrates the quote block functionality.</p> </blockquote>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
         // Assert
         $this->assertEquals($expectedHtml, $actualHtml);
     }
-
-
 }

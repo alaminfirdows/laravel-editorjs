@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -22,7 +24,7 @@ class ListBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<ul class=\"editorjs-list editorjs-list--unordered\">        <li class=\"editorjs-list__item editorjs-list__item--odd\">Hello</li>        <li class=\"editorjs-list__item editorjs-list__item--even\">World</li>    </ul>";
+        return '<ul class="editorjs-list editorjs-list--unordered">        <li class="editorjs-list__item editorjs-list__item--odd">Hello</li>        <li class="editorjs-list__item editorjs-list__item--even">World</li>    </ul>';
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

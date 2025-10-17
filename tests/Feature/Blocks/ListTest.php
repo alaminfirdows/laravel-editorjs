@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
@@ -9,15 +11,15 @@ class ListTest extends TestCase
     protected function getBlockData()
     {
         return [
-            "type" => "list",
-            "data" => [
-                "style" => "unordered",
-                "items" => [
-                    "First item",
-                    "Second item",
-                    "Third item"
-                ]
-            ]
+            'type' => 'list',
+            'data' => [
+                'style' => 'unordered',
+                'items' => [
+                    'First item',
+                    'Second item',
+                    'Third item',
+                ],
+            ],
         ];
     }
 
@@ -31,7 +33,7 @@ class ListTest extends TestCase
     {
         // Arrange
         $expectedHtml = preg_replace('/\s+/', ' ', $this->getBlockHtml());
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$this->getBlockData()])));
 
@@ -45,9 +47,9 @@ class ListTest extends TestCase
         // Arrange
         $blockData = $this->getBlockData();
         $blockData['data']['style'] = 'ordered';
-    $expectedHtml = '<ol class="editorjs-list editorjs-list--ordered"> <li class="editorjs-list__item editorjs-list__item--odd">First item</li> <li class="editorjs-list__item editorjs-list__item--even">Second item</li> <li class="editorjs-list__item editorjs-list__item--odd">Third item</li> </ol>';
+        $expectedHtml = '<ol class="editorjs-list editorjs-list--ordered"> <li class="editorjs-list__item editorjs-list__item--odd">First item</li> <li class="editorjs-list__item editorjs-list__item--even">Second item</li> <li class="editorjs-list__item editorjs-list__item--odd">Third item</li> </ol>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -60,18 +62,18 @@ class ListTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "list",
-            "data" => [
-                "style" => "ordered",
-                "items" => [
-                    "First item",
-                    "Second item"
-                ]
-            ]
+            'type' => 'list',
+            'data' => [
+                'style' => 'ordered',
+                'items' => [
+                    'First item',
+                    'Second item',
+                ],
+            ],
         ];
-    $expectedHtml = '<ol class="editorjs-list editorjs-list--ordered"> <li class="editorjs-list__item editorjs-list__item--odd">First item</li> <li class="editorjs-list__item editorjs-list__item--even">Second item</li> </ol>';
+        $expectedHtml = '<ol class="editorjs-list editorjs-list--ordered"> <li class="editorjs-list__item editorjs-list__item--odd">First item</li> <li class="editorjs-list__item editorjs-list__item--even">Second item</li> </ol>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -84,17 +86,17 @@ class ListTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "list",
-            "data" => [
-                "style" => "unordered",
-                "items" => [
-                    "Only item"
-                ]
-            ]
+            'type' => 'list',
+            'data' => [
+                'style' => 'unordered',
+                'items' => [
+                    'Only item',
+                ],
+            ],
         ];
-    $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> <li class="editorjs-list__item editorjs-list__item--odd">Only item</li> </ul>';
+        $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> <li class="editorjs-list__item editorjs-list__item--odd">Only item</li> </ul>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -107,15 +109,15 @@ class ListTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "list",
-            "data" => [
-                "style" => "unordered",
-                "items" => []
-            ]
+            'type' => 'list',
+            'data' => [
+                'style' => 'unordered',
+                'items' => [],
+            ],
         ];
-    $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> </ul>';
+        $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> </ul>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
@@ -128,19 +130,19 @@ class ListTest extends TestCase
     {
         // Arrange
         $blockData = [
-            "type" => "list",
-            "data" => [
-                "style" => "unordered",
-                "items" => [
-                    "<b>Bold item</b>",
-                    "<i>Italic item</i>",
-                    "<a href=\"https://example.com\">Link item</a>"
-                ]
-            ]
+            'type' => 'list',
+            'data' => [
+                'style' => 'unordered',
+                'items' => [
+                    '<b>Bold item</b>',
+                    '<i>Italic item</i>',
+                    '<a href="https://example.com">Link item</a>',
+                ],
+            ],
         ];
-    $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> <li class="editorjs-list__item editorjs-list__item--odd">&lt;b&gt;Bold item&lt;/b&gt;</li> <li class="editorjs-list__item editorjs-list__item--even">&lt;i&gt;Italic item&lt;/i&gt;</li> <li class="editorjs-list__item editorjs-list__item--odd">&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Link item&lt;/a&gt;</li> </ul>';
+        $expectedHtml = '<ul class="editorjs-list editorjs-list--unordered"> <li class="editorjs-list__item editorjs-list__item--odd">&lt;b&gt;Bold item&lt;/b&gt;</li> <li class="editorjs-list__item editorjs-list__item--even">&lt;i&gt;Italic item&lt;/i&gt;</li> <li class="editorjs-list__item editorjs-list__item--odd">&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Link item&lt;/a&gt;</li> </ul>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
-        
+
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 

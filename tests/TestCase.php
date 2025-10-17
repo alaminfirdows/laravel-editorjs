@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests;
 
 use AlAminFirdows\LaravelEditorJs\Facades\LaravelEditorJs;
@@ -17,9 +19,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getEditorData(array $blocks)
     {
         return json_encode([
-            'time'      => time(),
-            'blocks'    => $blocks,
-            'version'   => '2.28.0',
+            'time' => time(),
+            'blocks' => $blocks,
+            'version' => '2.28.0',
         ]);
     }
 
