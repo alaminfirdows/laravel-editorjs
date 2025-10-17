@@ -14,8 +14,7 @@ class EditorJsRule implements ValidationRule
     /**
      * Run the validation rule.
      *
-     * @param \Closure $fail
-     * @phpstan-param \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString $fail
+     * @param \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
@@ -95,7 +94,7 @@ class EditorJsRule implements ValidationRule
     /**
      * Find block index by type
      *
-     * @phpstan-param array<int, array<string, mixed>> $blocks
+     * @param array<int, array<string, mixed>> $blocks
      */
     private function findBlockIndex(array $blocks, string $type): ?int
     {
@@ -111,8 +110,8 @@ class EditorJsRule implements ValidationRule
     /**
      * Find parameter location in blocks
      *
-     * @phpstan-param array<int, array<string, mixed>> $blocks
-     * @phpstan-return array{blockIndex:int,blockType:string}|null
+     * @param array<int, array<string, mixed>> $blocks
+     * @return array{blockIndex:int,blockType:string}|null
      */
     private function findParameterLocation(array $blocks, string $param): ?array
     {
