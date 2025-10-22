@@ -41,10 +41,10 @@ class ParagraphTest extends TestCase
         $blockData = [
             "type" => "paragraph",
             "data" => [
-                "text" => "This paragraph contains <b>bold</b>, <i>italic</i>, and <a href=\"https://example.com\">link</a> elements."
+                "text" => "This paragraph contains <b>bold</b>, <i>italic</i>, and <a href=\"https://example.com\" target=\"_blank\" rel=\"noreferrer noopener\">link</a> elements."
             ]
         ];
-        $expectedHtml = '<p>This paragraph contains &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, and &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;link&lt;/a&gt; elements.</p>';
+        $expectedHtml = '<p>This paragraph contains <b>bold</b>, <i>italic</i>, and <a href="https://example.com" target="_blank" rel="noreferrer noopener">link</a> elements.</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -104,7 +104,7 @@ class ParagraphTest extends TestCase
                 "text" => "Special chars: &amp; &lt; &gt; &quot; &#39;"
             ]
         ];
-        $expectedHtml = '<p>Special chars: &amp;amp; &amp;lt; &amp;gt; &quot; &#039;</p>';
+        $expectedHtml = '<p>Special chars: &amp; &lt; &gt; &quot; &#39;</p>';
         $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
         
         // Act
@@ -137,6 +137,26 @@ class ParagraphTest extends TestCase
         
         // Act
         $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData($blocks)));
+
+        // Assert
+        $this->assertEquals($expectedHtml, $actualHtml);
+    }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function render_paragraph_with_marker_test(): void
+    {
+        // Arrange
+        $blockData = [
+            "type" => "paragraph",
+            "data" => [
+                "text" => "Create a directory for your module, enter it and run <mark class=\"cdx-marker\">npm init</mark> command."
+            ]
+        ];
+        $expectedHtml = '<p>Create a directory for your module, enter it and run <mark class="cdx-marker">npm init</mark> command.</p>';
+        $expectedHtml = preg_replace('/\s+/', ' ', $expectedHtml);
+
+        // Act
+        $actualHtml = preg_replace('/\s+/', ' ', $this->renderBlocks($this->getEditorData([$blockData])));
 
         // Assert
         $this->assertEquals($expectedHtml, $actualHtml);

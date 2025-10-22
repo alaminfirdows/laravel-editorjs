@@ -15,7 +15,7 @@ $classes .= ' image--backgrounded';
     <img src="{{ $data['file']['url'] }}" alt="{{ $data['caption'] ?: '' }}">
     @if (!empty($data['caption']))
     <footer class="image-caption">
-        {{ $data['caption'] }}
+        {!! $data['caption'] !!}
     </footer>
     @endif
 </figure>
