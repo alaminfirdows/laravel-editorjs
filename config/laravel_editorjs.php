@@ -166,6 +166,16 @@ return [
                 'height'  => 'integer',
                 'caption' => 'string',
             ],
+            'warning' => [
+                'title' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                ],
+                'message' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                ],
+            ],
         ],
     ],
 ];
