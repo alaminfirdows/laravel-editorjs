@@ -6,13 +6,13 @@ return [
             'paragraph' => [
                 'text' => [
                     'type'        => 'string',
-                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                 ],
             ],
             'header'    => [
                 'text'  => [
                     'type'        => 'string',
-                    'allowedTags' => 'a[href],mark[class]',
+                    'allowedTags' => 'a[href],mark[class],span[class]',
                 ],
                 'level' => [1, 2, 3, 4, 5, 6],
             ],
@@ -26,7 +26,7 @@ return [
                     'data' => [
                         '-' => [
                             'type'        => 'string',
-                            'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                            'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                         ],
                     ],
                 ],
@@ -79,7 +79,7 @@ return [
                 ],
                 'caption'        => [
                     'type'        => 'string',
-                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                 ],
                 'withBorder'     => 'boolean',
                 'withBackground' => 'boolean',
@@ -95,7 +95,7 @@ return [
                             'data' => [
                                 '-' => [
                                     'type'        => 'string',
-                                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                                 ],
                             ],
                         ],
@@ -105,11 +105,11 @@ return [
             'quote'     => [
                 'text'      => [
                     'type'        => 'string',
-                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                 ],
                 'caption'   => [
                     'type'        => 'string',
-                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                 ],
                 'alignment' => [
                     0 => 'left',
@@ -138,7 +138,7 @@ return [
                             'data' => [
                                 'text' => [
                                     'type' => 'string',
-                                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
                                 ],
                                 'checked' => 'boolean',
                             ],
@@ -165,6 +165,16 @@ return [
                 'width'   => 'integer',
                 'height'  => 'integer',
                 'caption' => 'string',
+            ],
+            'warning' => [
+                'title' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
+                ],
+                'message' => [
+                    'type' => 'string',
+                    'allowedTags' => 'i,b,a[href],code[class],mark[class],span[class]',
+                ],
             ],
         ],
     ],

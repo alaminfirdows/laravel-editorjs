@@ -5,6 +5,6 @@ $tag = $listType === 'unordered' ? 'ul' : 'ol';
 
 <{{ $tag }}>
     @foreach($data['items'] as $item)
-    <li>{{ $item }}</li>
+    <li>{!! editorjs_render_inline_code($item) !!}</li>
     @endforeach
 </{{ $tag }}>

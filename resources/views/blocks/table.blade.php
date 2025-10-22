@@ -4,7 +4,7 @@
         @php $tag = ($loop->first && $data['withHeadings']) ? 'th' : 'td'; @endphp
 
         @foreach($row as $cell)
-        <{{ $tag }}> {{ $cell }} </{{ $tag }}>
+        <{{ $tag }}> {!! editorjs_render_inline_code($cell) !!} </{{ $tag }}>
         @endforeach
     </tr>
     @endforeach

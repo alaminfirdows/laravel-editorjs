@@ -11,8 +11,8 @@ $class = 'text-right';
 @endphp
 
 <blockquote class="editor-quote">
-    <p class="{{ $class }}">{{ $data['text'] }}</p>
+    <p class="{{ $class }}">{!! editorjs_render_inline_code($data['text'] ?? '') !!}</p>
     @if (!empty($data['caption']))
-    <small class="{{ $class }}">— {{ $data['caption'] }}</small>
+    <small class="{{ $class }}">— {!! editorjs_render_inline_code($data['caption']) !!}</small>
     @endif
 </blockquote>
