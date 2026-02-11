@@ -25,8 +25,22 @@ return [
                     'type' => 'array',
                     'data' => [
                         '-' => [
-                            'type'        => 'string',
-                            'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                            'type' => 'array',
+                            'data' => [
+                                'content' => [
+                                    'type' => 'string',
+                                    'allowedTags' => 'i,b,a[href],code[class],mark[class]',
+                                ],
+                                'items' => [
+                                    'type' => 'array',
+                                    'data' => [
+                                        '-' => [
+                                            'type' => 'string',
+                                            'required' => false
+                                        ]
+                                    ]
+                                ]
+                            ]
                         ],
                     ],
                 ],
