@@ -38,6 +38,7 @@ class EditorJsRule implements ValidationRule
             new EditorJS($value, $configJson);
 
         } catch (EditorJSException $e) {
+            dd($e);
             $this->handleEditorJSException($e, $decodedData['blocks'] ?? [], $fail);
         }
     }

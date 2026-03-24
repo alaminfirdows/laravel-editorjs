@@ -42,6 +42,8 @@ class LaravelEditorJs
                 ])->render();
             }
 
+            // dd($renderedBlocks);
+
             return implode($renderedBlocks);
         } catch (EditorJSException $e) {
             throw new Exception($e->getMessage());
