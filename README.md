@@ -8,10 +8,12 @@ A simple editor.js html parser for Laravel
 [![Total Downloads](https://img.shields.io/packagist/dt/alaminfirdows/laravel-editorjs.svg?style=for-the-badge)](https://packagist.org/packages/alaminfirdows/laravel-editorjs)
 
 ## Features
+
 - Render Editor.js output
 - Custom block rendering
 
 ## Demo
+
 You can can play with the demo [here](https://github.com/alaminfirdows/laravel-editorjs-demo)
 
 ## Installation
@@ -35,12 +37,15 @@ php artisan vendor:publish --tag="laravel_editorjs-views"
 ```
 
 ## Usage
+
 Blade Directive
+
 ```bladehtml
 @editorJsRender($posts->body)
 ```
 
 Facade
+
 ```php
 use App\Models\Post;
 
@@ -72,11 +77,15 @@ echo $post->body;
 
 ## Versioning
 
-| Laravel Version     | Package Version |
-|---------------------|-----------------|
-| 10.x, 11.x, 12.x     | ✅ 2.x          |
-| 9.x                  | ✅ 1.1          |
-| 8.x                  | ✅ 1.0          |
+### Runtime Compatibility
+
+- PHP: 8.1, 8.2, 8.3, 8.4, 8.5
+
+| Laravel Version        | Package Version |
+| ---------------------- | --------------- |
+| 10.x, 11.x, 12.x, 13.x | ✅ 2.x          |
+| 9.x                    | ✅ 1.1          |
+| 8.x                    | ✅ 1.0          |
 
 ## Contributing
 
