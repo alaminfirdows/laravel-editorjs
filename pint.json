@@ -1,0 +1,15 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "declare_strict_types": {
+            "declare": true
+        },
+        "concat_space": {
+            "spacing": "one"
+        },
+        "phpdoc_align": {
+            "align": "left",
+            "spacing": 1
+        }
+    }
+}

@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ListBlockTest extends TestCase
 {
@@ -22,10 +25,10 @@ class ListBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<ul>        <li>Hello</li>        <li>World</li>    </ul>";
+        return '<ul>        <li>Hello</li>        <li>World</li>    </ul>';
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_paragraph_block_test(): void
     {
         $this->assertEquals(

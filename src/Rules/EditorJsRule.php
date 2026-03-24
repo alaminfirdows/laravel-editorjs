@@ -1,23 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Rules;
 
 use Closure;
 use EditorJS\EditorJS;
 use EditorJS\EditorJSException;
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Translation\PotentiallyTranslatedString;
 
 class EditorJsRule implements ValidationRule
 {
     /**
      * Run the validation rule.
      *
-     * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail
+     * @param Closure(string, ?string=): PotentiallyTranslatedString $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!is_string($value)) {
             $fail('The :attribute must be a string.');
+
             return;
         }
 
@@ -26,11 +30,13 @@ class EditorJsRule implements ValidationRule
 
             if (json_last_error() !== JSON_ERROR_NONE) {
                 $fail('The :attribute must be a valid JSON string.');
+
                 return;
             }
 
             if (!isset($decodedData['blocks']) || !is_array($decodedData['blocks'])) {
                 $fail('The :attribute must contain a blocks array.');
+
                 return;
             }
 
@@ -45,8 +51,6 @@ class EditorJsRule implements ValidationRule
     /**
      * Handle EditorJS exceptions and call the fail closure with appropriate messages
      *
-     * @param EditorJSException $e
-     * @param array $blocks
      * @param Closure(string): void $fail
      */
     private function handleEditorJSException(EditorJSException $e, array $blocks, Closure $fail): void
@@ -58,7 +62,7 @@ class EditorJsRule implements ValidationRule
             $blockIndex = $this->findBlockIndex($blocks, $invalidTool);
 
             $fail("Block type '{$invalidTool}' is not supported" .
-                ($blockIndex !== null ? " (found in block {$blockIndex})" : ""));
+                ($blockIndex !== null ? " (found in block {$blockIndex})" : ''));
 
         } elseif (preg_match('/Not found required param `(.+)`/', $message, $matches)) {
             $missingParam = $matches[1];
@@ -89,10 +93,6 @@ class EditorJsRule implements ValidationRule
 
     /**
      * Find block index by type
-     *
-     * @param array $blocks
-     * @param string $type
-     * @return int|null
      */
     private function findBlockIndex(array $blocks, string $type): ?int
     {
@@ -101,15 +101,12 @@ class EditorJsRule implements ValidationRule
                 return $index;
             }
         }
+
         return null;
     }
 
     /**
      * Find parameter location in blocks
-     *
-     * @param array $blocks
-     * @param string $param
-     * @return array|null
      */
     private function findParameterLocation(array $blocks, string $param): ?array
     {
@@ -121,6 +118,7 @@ class EditorJsRule implements ValidationRule
                 ];
             }
         }
+
         return null;
     }
 }

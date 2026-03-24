@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ParagraphBlockTest extends TestCase
 {
@@ -18,10 +21,10 @@ class ParagraphBlockTest extends TestCase
 
     protected function getBlockHtml()
     {
-        return "<p>Hello world!</p>";
+        return '<p>Hello world!</p>';
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_paragraph_block_test(): void
     {
         $this->assertEquals(

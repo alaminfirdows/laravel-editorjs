@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class WarningTest extends TestCase
 {
@@ -24,7 +25,7 @@ class WarningTest extends TestCase
         return '<div class="editorjs-warning"> <div class="editorjs-warning__title">Note:</div> <div class="editorjs-warning__message">Avoid using this method just for lulz. It can be very dangerous opposite your daily fun stuff.</div></div>';
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_block_test(): void
     {
         // Arrange
@@ -37,7 +38,7 @@ class WarningTest extends TestCase
         $this->assertEquals($expectedHtml, $actualHtml);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_with_html_tags_test(): void
     {
         // Arrange
@@ -54,7 +55,7 @@ class WarningTest extends TestCase
         $this->assertEquals($expectedHtml, $actualHtml);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_empty_title_test(): void
     {
         // Arrange
@@ -70,7 +71,7 @@ class WarningTest extends TestCase
         $this->assertEquals($expectedHtml, $actualHtml);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_empty_message_test(): void
     {
         // Arrange
@@ -86,7 +87,7 @@ class WarningTest extends TestCase
         $this->assertEquals($expectedHtml, $actualHtml);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_long_content_test(): void
     {
         // Arrange
@@ -103,7 +104,7 @@ class WarningTest extends TestCase
         $this->assertEquals($expectedHtml, $actualHtml);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_warning_with_special_characters_test(): void
     {
         // Arrange

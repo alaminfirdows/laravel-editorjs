@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs;
 
 use AlAminFirdows\LaravelEditorJs\Rules\EditorJsRule;
@@ -15,8 +17,6 @@ class LaravelEditorJs
     /**
      * Render blocks
      *
-     * @param string $data
-     * @return string
      * @throws Exception
      */
     public function render(string $data): string
@@ -30,7 +30,7 @@ class LaravelEditorJs
 
             foreach ($editor->getBlocks() as $block) {
 
-                $viewName = "laravel_editorjs::blocks." . Str::snake($block['type'], '-');
+                $viewName = 'laravel_editorjs::blocks.' . Str::snake($block['type'], '-');
 
                 if (!View::exists($viewName)) {
                     $viewName = 'laravel_editorjs::blocks.not-found';
@@ -38,7 +38,7 @@ class LaravelEditorJs
 
                 $renderedBlocks[] = View::make($viewName, [
                     'type' => $block['type'],
-                    'data' => $block['data']
+                    'data' => $block['data'],
                 ])->render();
             }
 
@@ -50,14 +50,11 @@ class LaravelEditorJs
 
     /**
      * Check if the data is valid
-     *
-     * @param string $data
-     * @return bool
      */
     public function isValid(string $data): bool
     {
         $validator = Validator::make(['data' => $data], [
-            'data' => ['required', 'string', new EditorJsRule]
+            'data' => ['required', 'string', new EditorJsRule],
         ]);
 
         if ($validator->passes()) {

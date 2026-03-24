@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AlAminFirdows\LaravelEditorJs\Tests\Feature\Blocks;
 
 use AlAminFirdows\LaravelEditorJs\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class EmbedBlockTest extends TestCase
 {
@@ -58,7 +61,7 @@ class EmbedBlockTest extends TestCase
         return '<div class="editorjs-embed"><div class="editorjs-embed__content editorjs-embed__content--twitter"><div class="editorjs-embed__twitter"><blockquote class="twitter-tweet"><a href="https://twitter.com/jack/status/20"></a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div></div><div class="editorjs-embed__caption">Test Twitter Caption</div></div>';
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_youtube_embed_block_test(): void
     {
         $this->assertHtml(
@@ -67,7 +70,7 @@ class EmbedBlockTest extends TestCase
         );
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_twitter_embed_block_test(): void
     {
         $this->assertHtml(
@@ -76,7 +79,7 @@ class EmbedBlockTest extends TestCase
         );
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function render_embed_block_with_custom_dimensions_test(): void
     {
         $blockData = $this->getYoutubeBlockData();
